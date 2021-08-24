@@ -1,0 +1,192 @@
+<header>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+	<script src="https://malsup.github.io/jquery.form.js"></script> 
+</header>
+
+<body>
+	<div class="col-sm-4">
+		<form action="https://docs.google.com/forms/d/e/1FAIpQLSce1or30A_AZP7eqDLd2jxRpp2OU16jznVGyPUs24UGX19VmQ/formResponse"
+			  target="_self"
+			  id="bootstrapForm"
+			  method="POST" >
+			
+				<fieldset>
+					<h2>Owen & Louie Time Tracking<br><small></small></h2>
+				</fieldset>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Field type: "date" id: "219771138" -->
+						<fieldset>
+							<legend for="219771138">Date</legend>
+							<div class="form-group">
+								<input type="date" id="1086697672_date" placeholder="8/23/2021" class="form-control" >
+							</div>
+						</fieldset>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-6 col-md-6">
+						<!-- Field type: "time" id: "1903635282" -->
+						<fieldset>
+							<legend for="1903635282">Owen Start</legend>
+							<div class="form-group">
+								<input type="time" id="1276341005" placeholder="3:18:11 PM" class="form-control" >
+							</div>
+						</fieldset>
+					</div>
+
+					<!-- Field type: "time" id: "952094406" -->
+					<div class="col-xs-6 col-md-6">
+						<fieldset>
+							<legend for="952094406">Owen End</legend>
+							<div class="form-group">
+								<input type="time" id="920596903" placeholder="3:18:11 PM" class="form-control" >
+							</div>
+						</fieldset>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-6">
+						<!-- Field type: "time" id: "1818271089" -->
+						<fieldset>
+							<legend for="1818271089">Louie Start</legend>
+							<div class="form-group">
+								<input type="time" id="165272980" placeholder="3:18:11 PM" class="form-control" >
+							</div>
+						</fieldset>
+					</div>
+
+					<div class="col-xs-6">
+						<!-- Field type: "time" id: "1615083668" -->
+						<fieldset>
+							<legend for="1615083668">Louie End</legend>
+							<div class="form-group">
+								<input type="time" id="51937528" placeholder="3:18:11 PM" class="form-control" >
+							</div>
+						</fieldset>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Field type: "dropdown" id: "461983174" -->
+						<fieldset>
+							<legend for="461983174">Is PTO</legend>
+							<div class="form-group">
+								<select id="461983174" name="entry.568898725" class="form-control">
+									<option value=""></option>
+									<option value="No">No</option>
+									<option value="Yes">Yes</option>
+								</select>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+
+				<div class="row">					
+					<div class="col-md-12">
+						<input type="hidden" name="fvv" value="1">
+						<input type="hidden" name="fbzx" value="-2894020016659080707">
+						<!--
+							CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+							This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+							Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+							We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+						-->
+						<input type="hidden" name="pageHistory" value="0">
+
+						<input class="btn btn-primary" type="submit" value="Submit">
+					</div>
+				</div>
+			
+		</form>
+	</div>
+</body>
+
+<script  type="text/javascript">
+	
+
+	$('#bootstrapForm').submit(function (event) {
+		event.preventDefault()
+		var extraData = {}
+		{
+			/* Parsing input date id=1086697672 */
+			var dateField = $("#1086697672_date").val()
+			var timeField = $("#1086697672_time").val()
+			let d = new Date(dateField)
+			if (!isNaN(d.getTime())) {
+				extraData["entry.1086697672_year"] = d.getFullYear()
+				extraData["entry.1086697672_month"] = d.getMonth() + 1
+				extraData["entry.1086697672_day"] = d.getUTCDate()
+			}
+			if (timeField && timeField.split(':').length >= 2) {
+				let values = timeField.split(':')
+				extraData["entry.1086697672_hour"] = values[0]
+				extraData["entry.1086697672_minute"] = values[1]
+			}
+		}
+		{
+			// Parsing input time id=1276341005
+			var field = $("#1276341005").val()
+			if (field) {
+				var values = field.split(':')
+				extraData["entry.1276341005_hour"] = values[0]
+				extraData["entry.1276341005_minute"] = values[1]
+				extraData["entry.1276341005_second"] = values[2]
+			}
+		}
+		{
+			// Parsing input time id=920596903
+			var field = $("#920596903").val()
+			if (field) {
+				var values = field.split(':')
+				extraData["entry.920596903_hour"] = values[0]
+				extraData["entry.920596903_minute"] = values[1]
+				extraData["entry.920596903_second"] = values[2]
+			}
+		}
+		{
+			// Parsing input time id=165272980
+			var field = $("#165272980").val()
+			if (field) {
+				var values = field.split(':')
+				extraData["entry.165272980_hour"] = values[0]
+				extraData["entry.165272980_minute"] = values[1]
+				extraData["entry.165272980_second"] = values[2]
+			}
+		}
+		{
+			// Parsing input time id=51937528
+			var field = $("#51937528").val()
+			if (field) {
+				var values = field.split(':')
+				extraData["entry.51937528_hour"] = values[0]
+				extraData["entry.51937528_minute"] = values[1]
+				extraData["entry.51937528_second"] = values[2]
+			}
+		}
+		
+		$('#bootstrapForm').ajaxSubmit({
+			data: extraData,
+			dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+			error: function () {
+				// Submit of form should be successful but JSONP callback will fail because Google Forms
+				// does not support it, so this is handled as a failure.
+				alert('Form Submitted. Thanks.')
+				// You can also redirect the user to a custom thank-you page:
+				// window.location = 'http://www.mydomain.com/thankyoupage.html'
+			}
+		})
+	})
+</script>
