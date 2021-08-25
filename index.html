@@ -20,116 +20,117 @@
 		<form action="https://docs.google.com/forms/d/e/1FAIpQLSce1or30A_AZP7eqDLd2jxRpp2OU16jznVGyPUs24UGX19VmQ/formResponse"
 			  target="_self"
 			  id="bootstrapForm"
-			  method="POST" >
-			
-				<fieldset>
-					<h2>Time Tracking<br><small></small></h2>
-				</fieldset>
-				
-				<div class="form-group">
-					<div class="row">
+			  method="POST">
+			<fieldset>
+				<h2>Time Tracker<br><small></small></h2>
+			</fieldset>
+
+
+			<div class="form-group">
+				<div class="row times">
 					<div class="col-xs-12">
 						<!-- Field type: "date" id: "219771138" -->
 						<fieldset>
 							<legend for="219771138">Date</legend>
+							<div class="row">
+								<div class="form-group col-xs-6">
+									<input type="date" id="1086697672_date" placeholder="8/25/2021" class="form-control" >
+								</div>
+								<div class="checkbox col-xs-4">
+									<label>
+										<input class="vacationCheckbox" type="checkbox" name="entry.1888078937" value="Is PTO" >
+										Vacation/Holiday
+									</label>
+								</div>
+							</div>
+						</fieldset>
+					</div> 
+			</div>
+
+
+			<!-- Field type: "time" id: "1903635282" -->
+			<div class="form-group">
+				<div class="row" id="owenTimes">
+					<div class="col-xs-6">
+						<fieldset>
+							<legend for="1903635282">Owen Start</legend>
 							<div class="form-group">
-								<input type="date" id="1086697672_date" placeholder="8/23/2021" class="form-control" >
+								<input type="time" id="1276341005" placeholder="11:07:53 AM" class="form-control" >
 							</div>
 						</fieldset>
 					</div>
-					</div>
-				</div>
 
-				<div class="form-group">
-					<div class="row">
-						<div class="col-xs-6">
-							<!-- Field type: "time" id: "1903635282" -->
-							<fieldset>
-								<legend for="1903635282">Owen Start</legend>
-								<div class="form-group">
-									<input type="time" id="1276341005" placeholder="3:18:11 PM" class="form-control" >
-								</div>
-							</fieldset>
-						</div>
-
+					<div class="col-xs-6">
 						<!-- Field type: "time" id: "952094406" -->
-						<div class="col-xs-6">
-							<fieldset>
-								<legend for="952094406">Owen End</legend>
-								<div class="form-group">
-									<input type="time" id="920596903" placeholder="3:18:11 PM" class="form-control" >
-								</div>
-							</fieldset>
-						</div>
+						<fieldset>
+							<legend for="952094406">Owen End </legend>
+							<div class="form-group">
+								<input type="time" id="920596903" placeholder="11:07:53 AM" class="form-control" >
+							</div>
+						</fieldset>
 					</div>
 				</div>
+			</div>
 
+
+			<!-- Field type: "time" id: "1903635282" -->
+			<div class="form-group">
+				<div class="row" id="louieTimes">
+					<div class="col-xs-6">
+						<!-- Field type: "time" id: "1818271089" -->
+						<fieldset>
+							<legend for="1818271089">Louie Start </legend>
+							<div class="form-group">
+								<input type="time" id="165272980" placeholder="11:07:53 AM" class="form-control" >
+							</div>
+						</fieldset>
+					</div>
+
+					<div class="col-xs-6">
+						<!-- Field type: "time" id: "1615083668" -->
+						<fieldset>
+							<legend for="1615083668">Louie End</legend>
+							<div class="form-group">
+								<input type="time" id="51937528" placeholder="11:07:53 AM" class="form-control" >
+							</div>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Field type: "paragraph" id: "926912217" -->
+			<fieldset>
+				<legend for="926912217">Comments</legend>
 				<div class="form-group">
-					<div class="row">
-						<div class="col-xs-6">
-							<!-- Field type: "time" id: "1818271089" -->
-							<fieldset>
-								<legend for="1818271089">Louie Start</legend>
-								<div class="form-group">
-									<input type="time" id="165272980" placeholder="3:18:11 PM" class="form-control" >
-								</div>
-							</fieldset>
-						</div>
+					<textarea id="375888419" name="entry.375888419" class="form-control" ></textarea>
+				</div>
+			</fieldset>
 
-						<div class="col-xs-6">
-							<!-- Field type: "time" id: "1615083668" -->
-							<fieldset>
-								<legend for="1615083668">Louie End</legend>
-								<div class="form-group">
-									<input type="time" id="51937528" placeholder="3:18:11 PM" class="form-control" >
-								</div>
-							</fieldset>
-						</div>
+			<div class="form-group">	
+				<div class="row">				
+					<div class="col-xs-12">
+						<input type="hidden" name="fvv" value="1">
+						<input type="hidden" name="fbzx" value="6546136222831161427">
+						<!--
+							CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+							This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+							Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+							We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+						-->
+						<input type="hidden" name="pageHistory" value="0">
+
+						<input class="btn btn-primary col-xs-12 col-sm-4" type="submit" value="Submit">
 					</div>
 				</div>
-				
-				<div class="form-group">
-					<div class="row">
-						<div class="col-xs-12">
-							<!-- Field type: "dropdown" id: "461983174" -->
-							<fieldset>
-								<legend for="461983174">Is PTO</legend>
-								<div class="form-group">
-									<select id="461983174" name="entry.568898725" class="form-control">
-										<option value=""></option>
-										<option value="No">No</option>
-										<option value="Yes">Yes</option>
-									</select>
-								</div>
-							</fieldset>
-						</div>
-					</div>
-				</div>
-
-				<div class="form-group">	
-					<div class="row">				
-						<div class="col-xs-12">
-							<input type="hidden" name="fvv" value="1">
-							<input type="hidden" name="fbzx" value="-2894020016659080707">
-							<!--
-								CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
-								This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
-								Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
-								We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
-							-->
-							<input type="hidden" name="pageHistory" value="0">
-
-							<input class="btn btn-primary col-xs-12 col-sm-4" type="submit" value="Submit">
-						</div>
-					</div>
-				</div>			
+			</div>
+			<a href="https://docs.google.com/spreadsheets/d/1wvkcvfyRGKcUfn2yiVaWy20fz3Sqeb5nY6ML7WOrdoY/edit?usp=sharing">Open Time Sheet</a>
 		</form>
-		<a href="https://docs.google.com/spreadsheets/d/1wvkcvfyRGKcUfn2yiVaWy20fz3Sqeb5nY6ML7WOrdoY/edit?usp=sharing">Open Time Sheet</a>
 	</div>
-</body>
+<body>
 
-<script  type="text/javascript">
-	
+<script>
+
 	$(document).ready(function(){
 		// Dates
 		document.getElementById("1086697672_date").valueAsDate = new Date();
@@ -140,10 +141,35 @@
 		
 		// Louie Times
 		$("#165272980").val("08:00:00");
-		$("#51937528").val("16:00:00");
+		$("#51937528").val("16:00:00");			
 		
-		// PTO 
-		$("#461983174").val("No");	
+		//$( "form input:checkbox" ).val(true);
+		
+		 
+		//var input = ;
+		//input[0].checked = true;
+		//input[0].value = false;
+		 
+		//$( "div" )
+		//  .text( "For this type jQuery found " + input[0].checked + "." )
+		//  .css( "color", "red" );
+		
+		// Update visibility on PTO checkbox
+		$( "form input:checkbox" ).change(function(args) {
+			var checkbox = args.target;
+			if (checkbox.name="entry.1888078937")
+			{
+				var visibility = "visible";
+				if (checkbox.checked)
+				{
+					visibility = "hidden";
+				}			
+				$("#owenTimes").css("visibility", visibility);
+				$("#louieTimes").css("visibility", visibility);
+			}
+		});
+
+
 	});
 
 	$('#bootstrapForm').submit(function (event) {
@@ -205,7 +231,6 @@
 				extraData["entry.51937528_second"] = values[2]
 			}
 		}
-		
 		$('#bootstrapForm').ajaxSubmit({
 			data: extraData,
 			dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
@@ -214,8 +239,9 @@
 				// does not support it, so this is handled as a failure.
 				//alert('Form Submitted. Thanks.')
 				// You can also redirect the user to a custom thank-you page:
-				window.location = 'https://dtmetz.github.io/timetracker/Success.html'
+				window.location = 'Success.html'
 			}
 		})
 	})
+
 </script>
