@@ -132,28 +132,20 @@
 <script>
 
 	$(document).ready(function(){
-		// Dates
-		document.getElementById("1086697672_date").valueAsDate = new Date();
-		
-		// Owen Times
-		$("#1276341005").val("08:00:00");
-		$("#920596903").val("16:30:00");
-		
-		// Louie Times
-		$("#165272980").val("08:00:00");
-		$("#51937528").val("16:00:00");			
-		
-		//$( "form input:checkbox" ).val(true);
-		
-		 
-		//var input = ;
-		//input[0].checked = true;
-		//input[0].value = false;
-		 
-		//$( "div" )
-		//  .text( "For this type jQuery found " + input[0].checked + "." )
-		//  .css( "color", "red" );
-		
+		if (!document.getElementById("1086697672_date").value)
+		{
+			// Dates
+			document.getElementById("1086697672_date").valueAsDate = new Date();
+			
+			// Owen Times
+			$("#1276341005").val("08:00:00");
+			$("#920596903").val("16:30:00");
+			
+			// Louie Times
+			$("#165272980").val("08:00:00");
+			$("#51937528").val("16:00:00");	
+		}
+	
 		// Update visibility on PTO checkbox
 		$( "form input:checkbox" ).change(function(args) {
 			var checkbox = args.target;
@@ -168,8 +160,6 @@
 				$("#louieTimes").css("visibility", visibility);
 			}
 		});
-
-
 	});
 
 	$('#bootstrapForm').submit(function (event) {
