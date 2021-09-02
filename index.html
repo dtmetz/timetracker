@@ -131,11 +131,13 @@
 
 <script>
 
-	$(document).ready(function(){
+	$(document).ready(function(){	
 		if (!document.getElementById("1086697672_date").value)
 		{
 			// Dates
-			document.getElementById("1086697672_date").valueAsDate = new Date();
+			var today = new Date();
+			today.setHours(0);
+			document.getElementById("1086697672_date").valueAsDate = today;
 			
 			// Owen Times
 			$("#1276341005").val("08:00:00");
@@ -171,8 +173,8 @@
 			var timeField = $("#1086697672_time").val()
 			let d = new Date(dateField)
 			if (!isNaN(d.getTime())) {
-				extraData["entry.1086697672_year"] = d.getFullYear()
-				extraData["entry.1086697672_month"] = d.getMonth() + 1
+				extraData["entry.1086697672_year"] = d.getUTCFullYear()
+				extraData["entry.1086697672_month"] = d.getUTCMonth() + 1
 				extraData["entry.1086697672_day"] = d.getUTCDate()
 			}
 			if (timeField && timeField.split(':').length >= 2) {
